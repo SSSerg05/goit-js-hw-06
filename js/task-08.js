@@ -12,6 +12,8 @@
 const form = document.querySelector('.login-form');
 
 form.addEventListener('submit', (event) => { 
+  //если событие не обрабатывается явно, его действие по умолчанию не должно 
+  //выполняться так, как обычно
   event.preventDefault();
 
   const {
@@ -28,6 +30,7 @@ form.addEventListener('submit', (event) => {
 
   return out(result);
 })
+form.reset();
 
 function out(obj) { 
   for (const key in obj) { 
