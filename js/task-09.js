@@ -9,11 +9,13 @@ function getRandomHexColor() {
 }
 
 const widget = document.querySelector('.widget');
+// div:last-chield -> (button)
 const button = widget.lastElementChild;
+// div:first-chield -> (p:first-chield) -> (span)
 const text = widget.firstElementChild.firstElementChild;
 
 button.addEventListener('click', () => {
-  let color = getRandomHexColor();
+  const color = getRandomHexColor();
   document.body.style.backgroundColor = color;
   text.textContent = color;
 })
