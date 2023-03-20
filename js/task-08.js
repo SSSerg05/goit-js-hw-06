@@ -27,10 +27,11 @@ form.addEventListener('submit', (event) => {
     return false;
   }
   result[email.value] = password.value;
-
+  form.reset();
+  
   return out(result);
 })
-form.reset();
+
 
 function out(obj) { 
   for (const key in obj) { 
