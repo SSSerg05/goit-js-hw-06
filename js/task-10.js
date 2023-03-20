@@ -27,12 +27,12 @@ const control = document.querySelector('#controls').children;
 const parent = document.querySelector('#boxes');
 
 // елементи керування
-const [input, btnCreate, btnClear] = control;
+const [input, btnCreate, btnDestroy] = control;
 let counterValue = 0;
 
 input.addEventListener('change', () => { counterValue = Number(input.value) });
 btnCreate.addEventListener('click', () => { createBoxes(counterValue) });
-btnClear.addEventListener('click', () => { destroyBoxes(counterValue) });
+btnDestroy.addEventListener('click', () => { destroyBoxes(counterValue) });
 
 /*  додаємо до батьківського елементу n-кількість елементів
 *
