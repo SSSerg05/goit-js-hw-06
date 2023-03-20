@@ -11,7 +11,14 @@ const input = document.querySelector("#validation-input");
 
 input.addEventListener('blur', () => { 
   const { length } = input.dataset
-  if (length <= input.length) { 
-    input.style.border = 'border'
+
+  if (length >= input.value.length) {
+    input.classList.remove('invalid')
+    input.classList.add('valid')
+    // input.style.border = "2px solid #4caf50"
+
+  } else { 
+    input.classList.remove('valid')
+    input.classList.add('invalid')
   }
 })
