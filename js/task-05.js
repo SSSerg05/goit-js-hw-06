@@ -6,10 +6,12 @@ const nameInput = document.querySelector("#name-input");
 const nameOut = document.querySelector("#name-output");
 
 nameInput.addEventListener('input', () => { 
-  if (nameInput.value === "") { 
+  let strName = nameInput.value.trim();
+
+  if ( strName === "") { 
     return out("Anonymous");
   }
-  return out(nameInput.value);
+  return out(strName);
 })
 
 function out(str) { 

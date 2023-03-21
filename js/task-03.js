@@ -34,20 +34,18 @@ const listStyle = {
   'margin': '0 auto',
   'width': '100%',
 }
+
 // замінюємо стилі у елемента
 Object.assign(list.style, listStyle);
 
-//задаємо змінну контейнер, де будемо зберігати блок елементів 
-const documentFragment = document.createDocumentFragment();
+// задаємо контейнер, де будемо зберігати масив блоків елементів( li > img )
+const arrElements = images.map(item => createNewItem(item));
 
-// додаємо картинки у елементах списку
-images.forEach(item => { 
-  documentFragment.appendChild( createNewItem(item) );
-})
+// розпиляємо масив та додаємо всі елементи у батьківський list
+list.append(...arrElements);
 
-// об'єднуємо всі елементи
-list.appendChild(documentFragment);
 
+//*----------------------------------
 /*
 * @param {url: {String}, alt: {String}}    {Object} 
 * @return li {Node}

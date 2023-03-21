@@ -16,25 +16,31 @@ form.addEventListener('submit', (event) => {
   //выполняться так, как обычно
   event.preventDefault();
 
+  // деструктиризація обробчика події поточного елементу(форми)
   const {
     elements: { email, password }
   } = event.currentTarget;
   
+  // об'єкт результату виконання
   let result = {};
 
-  if (email.value === "" || password.value === "") {
+  if (email.value.trim() === "" || password.value.trim() === "") {
     alert('все поля должны быть заполнены.');
-    return false;
+    return result;
   }
+  // запис даних у об'єкт
   result[email.value] = password.value;
-  form.reset();
   
-  return out(result);
+  // очистка форма
+  form.reset();
+
+  // вивід результату
+  out(result);
+
+  return result;
 })
 
-
+// вивід результату
 function out(obj) { 
-  for (const key in obj) { 
-    console.log(`${ key }: ${obj[key]}`)
-  }
+  console.log(obj);
 }
