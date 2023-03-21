@@ -11,7 +11,7 @@
 
 const form = document.querySelector('.login-form');
 
-form.addEventListener('submit', (event) => { 
+const formEvent = form.addEventListener('submit', (event) => { 
   //если событие не обрабатывается явно, его действие по умолчанию не должно 
   //выполняться так, как обычно
   event.preventDefault();
@@ -26,7 +26,7 @@ form.addEventListener('submit', (event) => {
 
   if (email.value.trim() === "" || password.value.trim() === "") {
     alert('все поля должны быть заполнены.');
-    return result;
+    return;
   }
   // запис даних у об'єкт
   result[email.value] = password.value;
@@ -36,8 +36,6 @@ form.addEventListener('submit', (event) => {
 
   // вивід результату
   out(result);
-
-  return result;
 })
 
 // вивід результату
