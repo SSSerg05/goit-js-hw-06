@@ -25,7 +25,7 @@ const formEvent = form.addEventListener('submit', (event) => {
   let result = {};
 
   if (email.value.trim() === "" || password.value.trim() === "") {
-    alert('все поля должны быть заполнены.');
+    alert('Усі поля повинні мати відповідне значення.');
     return;
   }
   // запис даних у об'єкт
