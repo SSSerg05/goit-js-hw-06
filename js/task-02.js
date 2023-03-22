@@ -15,26 +15,17 @@ const ingredients = [
   'Condiments',
 ];
 
-/*  Створюємо нову групу елементів ( li > h2 )
-* @param nameItem   { String } 
-* @return li        { Node }
-*/
-function createNewItem(nameItem) { 
+
+const list = document.querySelector('#ingredients');
+
+const arrItems = ingredients.map(item => { 
   const li = document.createElement('li');
   li.classList.add("item");
   
   const h2 = document.createElement('h2');
-  h2.textContent = nameItem;
+  h2.textContent = item;
   li.appendChild(h2);
-
   return li;
-}
+})
 
-const documentFragment = document.createDocumentFragment();
-const list = document.querySelector('#ingredients');
-
-for (const item of ingredients) {
-  documentFragment.appendChild(createNewItem(item));
-}
-
-list.appendChild(documentFragment);
+list.append(...arrItems);

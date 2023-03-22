@@ -29,16 +29,12 @@ const formEvent = form.addEventListener('submit', (event) => {
     return;
   }
   // запис даних у об'єкт
-  result[email.value] = password.value;
-  
+  result = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(result);
+
   // очистка форма
   form.reset();
-
-  // вивід результату
-  out(result);
 })
-
-// вивід результату
-function out(obj) { 
-  console.log(obj);
-}
